@@ -1,7 +1,7 @@
 
 
 const display = document.getElementById('display')
-const operationArray = ['+','-','*','/']
+const operationArray = ['+','-','*','/', '^']
 let calculationHistory = [];
 window.addEventListener('load',()=>{
     display.textContent = 0
