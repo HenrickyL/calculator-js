@@ -7,44 +7,34 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="calculator" class="container">
-        <div id="display" class="mb-3"></div>
-        <div class="row">
-          <button class="btn btn-light" onclick="clearDisplay()">C</button>
-          <button class="btn btn-light" onclick="deleteLast()">DEL</button>
-          <button class="btn btn-light" onclick="appendOperation('^')">^</button>
-          <button class="btn btn-primary" onclick="appendOperation('/')">/</button>
+        <div class="container">
+          <form action="" name="calc" class="calculator">
+            <input type="text" class="value" id="display" readonly name="txt" />
+            <span class="num clear" onclick="clearDisplay()"><i>C</i></span>
+            <span class="num" onclick="appendOperation('/')"><i>/</i></span>
+            <span class="num" onclick="appendOperation('*')"><i>*</i></span>
+            <span class="num" onclick="appendCharacter('7')"><i>7</i></span>
+            <span class="num" onclick="appendCharacter('8')"><i>8</i></span>
+            <span class="num" onclick="appendCharacter('9')"><i>9</i></span>
+            <span class="num" onclick="appendOperation('-')"><i>-</i></span>
+            <span class="num" onclick="appendCharacter('4')"><i>4</i></span>
+            <span class="num" onclick="appendCharacter('5')"><i>5</i></span>
+            <span class="num" onclick="appendCharacter('6')"><i>6</i></span>
+            <span class="num plus" onclick="appendOperation('+')"><i>+</i></span>
+            <span class="num" onclick="appendCharacter('1')"><i>1</i></span>
+            <span class="num" onclick="appendCharacter('2')"><i>2</i></span>
+            <span class="num" onclick="appendCharacter('3')"><i>3</i></span>
+            <span class="num" onclick="appendCharacter('0')"><i>0</i></span>
+            <span class="num" onclick="appendCharacter(')')"><i>)</i></span>
+            <span class="num" onclick="appendCharacter('**')"><i>^</i></span>
+            <span class="num"onclick="appendCharacter('Math.sqrt(')"><i>√</i></span>
+            <span class="num" onclick="appendCharacter('Math.sin(')"><i>sin</i></span>
+            <span class="num" onclick="appendCharacter('Math.cos(')"><i>cos</i></span>
+            <span class="num" onclick="appendCharacter('Math.tan(')"><i>tan</i></span>
+            <span class="num equal" onclick="calculateResult()"><i>=</i></span>
+            <textarea class="value" id="history" readonly></textarea>
+          </form>
         </div>
-        <div class="row">
-          <button class="btn btn-light" onclick="appendCharacter('7')">7</button>
-          <button class="btn btn-light" onclick="appendCharacter('8')">8</button>
-          <button class="btn btn-light" onclick="appendCharacter('9')">9</button>
-          <button class="btn btn-primary" onclick="appendOperation('*')">*</button>
-        </div>
-        <div class="row">
-          <button class="btn btn-light" onclick="appendCharacter('4')">4</button>
-          <button class="btn btn-light" onclick="appendCharacter('5')">5</button>
-          <button class="btn btn-light" onclick="appendCharacter('6')">6</button>
-          <button class="btn btn-primary" onclick="appendOperation('-')">-</button>
-        </div>
-        <div class="row">
-          <button class="btn btn-light" onclick="appendCharacter('1')">1</button>
-          <button class="btn btn-light" onclick="appendCharacter('2')">2</button>
-          <button class="btn btn-light" onclick="appendCharacter('3')">3</button>
-          <button class="btn btn-primary" onclick="appendOperation('+')">+</button>
-        </div>
-        <div class="row">
-          <button class="btn btn-light" onclick="appendCharacter('0')">0</button>
-          <button class="btn btn-light" onclick="appendCharacter('.')">.</button>
-          <button class="btn btn-primary" onclick="calculateResult()">=</button>
-        </div>
-        <div class="row">
-          <button class="btn btn-light" onclick="appendOperation('Math.sqrt(')">√</button>
-          <button class="btn btn-light" onclick="appendOperation('Math.sin(')">sin</button>
-          <button class="btn btn-light" onclick="appendOperation('Math.cos(')">cos</button>
-          <button class="btn btn-light" onclick="appendOperation('Math.tan(')">tan</button>
-        </div>
-        <div id="history" class="mt-3"></div>
 </body>
 
 
