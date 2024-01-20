@@ -1,6 +1,6 @@
 const display = document.querySelector(".value");
 const history = document.getElementById("history");
-const operationArray = ['+', '-', '*', '/', '^'];
+const operationArray = ['+', '-', '/', '^'];
 let calculationHistory = [];
 
 window.addEventListener('load', () => {
