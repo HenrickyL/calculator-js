@@ -1,6 +1,6 @@
 const display = document.querySelector(".value");
 const history = document.getElementById("history");
-const operationArray = ['+', '-', '/', '*'];
+const operationArray = ['+', '-', '/',];
 const advancedOperationArray = [
     {display:'√', apply:`Math.sqrt`},
     {display:'Sin', apply:`Math.sin`},
@@ -61,7 +61,11 @@ function appendCharacter(character){
 
 function calculateResult() {
     try{
+
         let strDisplay = display.value
+
+        if(strDisplay.includes('/0')) throw new Error('Division by zero Error')
+
         advancedOperationArray.forEach(op=>{
             if(strDisplay.includes(op.display)){
                 strDisplay =  strDisplay.replace(op.display, op.apply)
@@ -88,10 +92,11 @@ function getOperationFormat(op){
 
 function appendOperation(op){
     const last = getDisplayLast()
-    if(!isOperation(last) && last !== '.'){
+    if((!isOperation(last)) && last !== '.'){
         if(inAdvancedOperation(op)){
             display.value = getOperationFormat(op)
         }else{
+            if(!(last === '*' && op !== '*'))
             display.value += op
         }
     }
